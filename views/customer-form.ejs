@@ -1,0 +1,102 @@
+<%- include('./partials/header') %>
+
+<div class="customer-form-container">
+  <div class="page-header animate-fade-in">
+    <h1>
+      <i class="fas fa-<%= customer ? 'edit' : 'user-plus' %>"></i>
+      <%= customer ? 'Edit' : 'Add' %> Customer
+    </h1>
+    <a href="/customers" class="btn btn-secondary">
+      <i class="fas fa-arrow-left"></i> Back to Customers
+    </a>
+  </div>
+  
+  <div class="form-card animate-slide-up">
+    <form action="<%= action %>" method="POST" class="customer-form">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            value="<%= customer ? customer.name : '' %>" 
+            required
+            class="animate-field"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            value="<%= customer ? customer.email : '' %>"
+            class="animate-field"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            value="<%= customer ? customer.phone : '' %>"
+            class="animate-field"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input 
+            type="text" 
+            id="company" 
+            name="company" 
+            value="<%= customer ? customer.company : '' %>"
+            class="animate-field"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="status">Status *</label>
+          <select 
+            id="status" 
+            name="status" 
+            required
+            class="animate-field"
+          >
+            <option value="">Select Status</option>
+            <option value="Active" <%= customer && customer.status === 'Active' ? 'selected' : '' %>>Active</option>
+            <option value="Inactive" <%= customer && customer.status === 'Inactive' ? 'selected' : '' %>>Inactive</option>
+            <option value="Lead" <%= customer && customer.status === 'Lead' ? 'selected' : '' %>>Lead</option>
+            <option value="Prospect" <%= customer && customer.status === 'Prospect' ? 'selected' : '' %>>Prospect</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="notes">Notes</label>
+        <textarea 
+          id="notes" 
+          name="notes" 
+          rows="4"
+          class="animate-field"
+        ><%= customer ? customer.notes : '' %></textarea>
+      </div>
+      
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary animate-bounce">
+          <i class="fas fa-save"></i> <%= customer ? 'Update' : 'Save' %> Customer
+        </button>
+        <button type="reset" class="btn btn-secondary">
+          <i class="fas fa-undo"></i> Reset
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
+

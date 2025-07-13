@@ -1,0 +1,30 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | CRM Portal</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <% if (typeof user != 'undefined' && user) { %>
+      <%- include('./sidebar') %>
+    <% } %>
+    <div class="main-content">
+      <% if (typeof user != 'undefined' && user) { %>
+        <nav class="top-nav">
+          <div class="logo">CRM Portal</div>
+          <div class="user-menu">
+            <span><%= user.name %></span>
+            <a href="/auth/logout" class="logout-btn">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+          </div>
+        </nav>
+      <% } %>
+      <div class="content-wrapper">
+        <%- include('./messages') %>
+

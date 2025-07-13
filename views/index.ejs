@@ -1,0 +1,41 @@
+<%- include('./partials/header') %>
+
+<div class="landing-page">
+  <div class="hero-section animate-fade-in">
+    <h1>Welcome to CRM Portal</h1>
+    <p>Manage your customers efficiently with our powerful CRM solution</p>
+    <div class="cta-buttons">
+      <a href="/auth/login" class="btn btn-primary animate-bounce">Login</a>
+      <a href="/auth/signup" class="btn btn-secondary animate-bounce">Sign Up</a>
+    </div>
+  </div>
+  
+  <div class="features-section">
+    <h2>Key Features</h2>
+    <div class="features-grid">
+      <div class="feature-card animate-slide-up">
+        <i class="fas fa-users feature-icon"></i>
+        <h3>Customer Management</h3>
+        <p>Easily add, edit, and manage your customer database</p>
+      </div>
+      <div class="feature-card animate-slide-up" style="animation-delay: 0.2s;">
+        <i class="fas fa-chart-line feature-icon"></i>
+        <h3>Analytics Dashboard</h3>
+        <p>Get insights into your customer relationships</p>
+      </div>
+      <div class="feature-card animate-slide-up" style="animation-delay: 0.4s;">
+        <i class="fas fa-tasks feature-icon"></i>
+        <h3>Task Management</h3>
+        <p>Keep track of your customer-related tasks</p>
+      </div>
+      <div class="feature-card animate-slide-up" style="animation-delay: 0.6s;">
+        <i class="fas fa-mobile-alt feature-icon"></i>
+        <h3>Mobile Friendly</h3>
+        <p>Access your CRM from any device, anywhere</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
+

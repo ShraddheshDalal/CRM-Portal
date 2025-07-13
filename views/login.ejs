@@ -1,0 +1,41 @@
+<%- include('./partials/header') %>
+
+<div class="auth-container animate-fade-in">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h2>Login to CRM Portal</h2>
+      <p>Enter your credentials to access your account</p>
+    </div>
+    
+    <form action="/auth/login" method="POST" class="auth-form">
+      <div class="form-group animate-slide-up">
+        <label for="email">Email</label>
+        <div class="input-with-icon">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      
+      <div class="form-group animate-slide-up" style="animation-delay: 0.2s;">
+        <label for="password">Password</label>
+        <div class="input-with-icon">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" name="password" required>
+        </div>
+      </div>
+      
+      <div class="form-group animate-slide-up" style="animation-delay: 0.3s;">
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+      </div>
+    </form>
+    
+    <div class="auth-footer animate-fade-in" style="animation-delay: 0.5s;">
+      <p>Don't have an account? <a href="/auth/signup">Sign Up</a></p>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
+

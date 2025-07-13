@@ -1,0 +1,57 @@
+<%- include('./partials/header') %>
+
+<div class="auth-container animate-fade-in">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h2>Create an Account</h2>
+      <p>Sign up to start managing your customers</p>
+    </div>
+    
+    <form action="/auth/signup" method="POST" class="auth-form">
+      <div class="form-group animate-slide-up">
+        <label for="name">Full Name</label>
+        <div class="input-with-icon">
+          <i class="fas fa-user"></i>
+          <input type="text" id="name" name="name" value="<%= typeof name != 'undefined' ? name : '' %>" required>
+        </div>
+      </div>
+      
+      <div class="form-group animate-slide-up" style="animation-delay: 0.1s;">
+        <label for="email">Email</label>
+        <div class="input-with-icon">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" name="email" value="<%= typeof email != 'undefined' ? email : '' %>" required>
+        </div>
+      </div>
+      
+      <div class="form-group animate-slide-up" style="animation-delay: 0.2s;">
+        <label for="password">Password</label>
+        <div class="input-with-icon">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" name="password" required>
+        </div>
+      </div>
+      
+      <div class="form-group animate-slide-up" style="animation-delay: 0.3s;">
+        <label for="password2">Confirm Password</label>
+        <div class="input-with-icon">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password2" name="password2" required>
+        </div>
+      </div>
+      
+      <div class="form-group animate-slide-up" style="animation-delay: 0.4s;">
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fas fa-user-plus"></i> Sign Up
+        </button>
+      </div>
+    </form>
+    
+    <div class="auth-footer animate-fade-in" style="animation-delay: 0.6s;">
+      <p>Already have an account? <a href="/auth/login">Login</a></p>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>
+

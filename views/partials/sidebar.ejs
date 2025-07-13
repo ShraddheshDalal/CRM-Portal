@@ -1,0 +1,28 @@
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h2>CRM Portal</h2>
+  </div>
+  <ul class="sidebar-menu">
+    <li>
+      <a href="/dashboard" class="<%= title === 'Dashboard' ? 'active' : '' %>">
+        <i class="fas fa-tachometer-alt"></i> Dashboard
+      </a>
+    </li>
+    <li>
+      <a href="/customers" class="<%= title === 'Customers' || title === 'Add Customer' || title === 'Edit Customer' ? 'active' : '' %>">
+        <i class="fas fa-users"></i> Customers
+      </a>
+    </li>
+    <li>
+      <a href="/profile">
+        <i class="fas fa-user"></i> Profile
+      </a>
+    </li>
+    <li>
+      <a href="/settings">
+        <i class="fas fa-cog"></i> Settings
+      </a>
+    </li>
+  </ul>
+</div>
+
